@@ -1,0 +1,168 @@
+.filters {
+  display: grid;
+
+  grid-template-columns:
+    1fr 220px auto;
+
+  gap: 15px;
+
+  margin-bottom: 30px;
+
+  animation: filterIn 0.7s ease;
+}
+
+.search-wrapper {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+}
+
+.search-wrapper > span {
+  position: absolute;
+
+  left: 15px;
+
+  color: #8174d8;
+
+  font-size: 1.2rem;
+
+  z-index: 2;
+}
+
+.search-wrapper input {
+  width: 100%;
+
+  padding: 14px 45px;
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  border-radius: 12px;
+
+  outline: none;
+
+  color: white;
+
+  background:
+    rgba(255,255,255,0.035);
+
+  font-family: inherit;
+
+  transition: 0.3s;
+}
+
+.search-wrapper input:focus {
+  border-color: #7c5cff;
+
+  box-shadow:
+    0 0 25px rgba(124,92,255,0.1);
+}
+
+.search-wrapper button {
+  position: absolute;
+
+  right: 12px;
+
+  border: 0;
+
+  background: transparent;
+
+  color: #88889b;
+
+  font-size: 1.2rem;
+
+  cursor: pointer;
+}
+
+.department-filter {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+.department-filter label {
+  color: #6f6f83;
+
+  font-size: 0.65rem;
+}
+
+.department-filter select {
+  height: 46px;
+
+  padding: 0 12px;
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  border-radius: 12px;
+
+  outline: none;
+
+  color: white;
+
+  background: #11142a;
+
+  cursor: pointer;
+}
+
+.department-filter option {
+  background: #11142a;
+}
+
+.result-count {
+  height: 46px;
+
+  display: flex;
+
+  align-items: center;
+
+  padding: 0 18px;
+
+  border-radius: 12px;
+
+  color: #a093ff;
+
+  background:
+    rgba(124,92,255,0.08);
+
+  font-size: 0.8rem;
+
+  white-space: nowrap;
+}
+
+@keyframes filterIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (max-width: 800px) {
+  .filters {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .search-wrapper {
+    grid-column: 1 / -1;
+  }
+
+  .result-count {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 500px) {
+  .filters {
+    grid-template-columns: 1fr;
+  }
+
+  .search-wrapper {
+    grid-column: auto;
+  }
+}

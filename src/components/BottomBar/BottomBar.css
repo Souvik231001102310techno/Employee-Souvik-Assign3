@@ -1,0 +1,133 @@
+.bottom-bar {
+  width: min(1150px, 92%);
+
+  margin: 0 auto;
+
+  padding: 35px 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  border-top:
+    1px solid
+    rgba(255, 255, 255, 0.08);
+
+  color: #6f6f83;
+
+  font-size: 0.75rem;
+
+  animation: bottomBarReveal 0.8s ease;
+}
+
+.bottom-brand {
+  display: flex;
+
+  align-items: center;
+
+  gap: 11px;
+}
+
+.bottom-logo {
+  width: 38px;
+  height: 38px;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 11px;
+
+  color: white;
+
+  background:
+    linear-gradient(
+      135deg,
+      #7c5cff,
+      #00d9ff
+    );
+
+  font-weight: 900;
+
+  box-shadow:
+    0 0 25px
+    rgba(124, 92, 255, 0.25);
+
+  transition: 0.4s;
+}
+
+.bottom-brand:hover .bottom-logo {
+  transform:
+    rotate(10deg)
+    scale(1.1);
+}
+
+.bottom-brand-text strong,
+.bottom-brand-text span {
+  display: block;
+}
+
+.bottom-brand-text strong {
+  color: #dddbea;
+
+  font-size: 0.8rem;
+}
+
+.bottom-brand-text span {
+  margin-top: 3px;
+
+  color: #656578;
+
+  font-size: 0.62rem;
+}
+
+.bottom-info {
+  color: #66667a;
+
+  font-size: 0.7rem;
+}
+
+.back-top {
+  color: #9687ff;
+
+  text-decoration: none;
+
+  transition: 0.3s;
+}
+
+.back-top:hover {
+  color: white;
+
+  transform:
+    translateY(-4px);
+}
+
+@keyframes bottomBarReveal {
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+}
+
+@media (max-width: 650px) {
+  .bottom-bar {
+    flex-direction: column;
+
+    text-align: center;
+
+    padding: 30px 0;
+  }
+}
